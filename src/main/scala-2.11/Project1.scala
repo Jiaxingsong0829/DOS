@@ -1,61 +1,84 @@
 import akka.actor.{Actor, ActorSystem, Props}
 import akka.routing.RoundRobinPool
 
-import scala.collection.mutable.Queue
 import scala.concurrent.duration._
  
 object Project1 {
 
   def main(args: Array[String]): Unit = {
-    calculate(nrOfWorkers = 8, start = 33, end = 126)
+
+	  	val targetPrefixBuilder = new StringBuilder("000000")
+//	  	for (i <- 1 to args(0).toInt) {
+//			targetPrefixBuilder.append('0')
+//		}
+	  	calculate(nrOfWorkers = 8, targetPrefixBuilder.toString() : String)
 
   }
 
   sealed trait BitcoinMessage
   case object Calculate extends BitcoinMessage
-  case class Work(i: Int, start: Int, end: Int, dur: Int, nrOfWorkers: Int) extends BitcoinMessage
+  case class Work(startSuffix : String, workload : Int, targetPrefix : String) extends BitcoinMessage
   case class Result(value: String) extends BitcoinMessage
-  case class showBitcoin(value: String, duration: Duration)
 
 	// the special prefix
-	val string = "zhihuang"
+	val prefix = "zhihuang"
 	class Worker extends Actor {
 
-   	def getBitcoinFromI(i: Int, start: Int, end: Int, dur: Int, nrOfWorkers: Int): String = {
-		  	if (i == nrOfWorkers){
-				bfs(string, start + dur * (i - 1), end)
-		  	}
-      	else {
-			 	bfs(string, startIndex = start + dur * (i - 1), endIndex = start + dur * (i - 1) + dur)
-			}
-		}
+		def search(startSuffix : String, workLoad : Int, targetPrefix : String): String = {
+			var suffix = startSuffix
 
-		def bfs(string: String, startIndex: Int, endIndex: Int): String = {
-		  	var queue = Queue[String]()
-			for(num <- startIndex to endIndex){
-				queue += (string + num.asInstanceOf[Char])
-			}
-			while (queue.nonEmpty) {
-				val candidate = queue.dequeue
-				if (MD5(candidate).startsWith("0000")) {
-					return candidate
-				} else {
-					for (char <- 33 to 126) {
-						queue += (candidate + char.asInstanceOf[Char])
-					}
+			for (1 <- 0 to workLoad) {
+				if (MD5(prefix + suffix).startsWith(targetPrefix)) {
+					return prefix + suffix
 				}
-				// too deep
-				if (candidate.length() > string.length() + 5) {
-					queue.clear();
-				}
+				suffix = getNext(suffix, 1)
 			}
-			string
+			"FAILED"
 		}
 
 		def receive = {
-			case Work(i, start, end, dur, nrOfWorkers) ⇒
-			sender ! Result(getBitcoinFromI(i, start, end, dur, nrOfWorkers)) // perform the work
+			case Work(startSuffix, workLoad, targetPrefix) ⇒
+			sender ! Result(search(startSuffix, workLoad, targetPrefix)) // perform the work
 		}
+	}
+
+	class Master(nrOfWorkers: Int, targetPrefix: String) extends Actor {
+		val workLoad = 10000
+		val startTime: Long = System.currentTimeMillis
+		val workerRouter = context.actorOf(Props[Worker].withRouter(RoundRobinPool(nrOfWorkers)), name = "workerRouter")
+		var startString = "";
+
+		def receive = {
+			case Calculate ⇒
+				for (i ← 1 until nrOfWorkers)	{
+					startString = getNext(startString, workLoad)
+					workerRouter ! Work(startString, workLoad, targetPrefix)
+				}
+			case Result(value) ⇒
+				val duration = (System.currentTimeMillis - startTime).millis
+				// Stops this actor and all its supervised children
+				if (value.equals("FAILED")) {
+					startString = getNext(startString, workLoad)
+					sender ! Work(startString, workLoad, targetPrefix);
+				} else {
+					println("%s\t\t%s".format(value, MD5(value)))
+					println(duration)
+					context.stop(self)
+					context.system.shutdown()
+				}
+		}
+	}
+
+	def calculate(nrOfWorkers: Int, targetPrefix : String) {
+		// Create an Akka system
+		val system = ActorSystem("BitcoinSystem")
+
+		// create the master
+		val master =
+			system.actorOf(Props(new Master(nrOfWorkers, targetPrefix)), name = "master")
+
+		// start the calculation
+		master ! Calculate
 	}
 
 	def MD5(s: String): String = {
@@ -63,34 +86,39 @@ object Project1 {
 		m.map("%02x".format(_)).mkString
 	}
 
-	class Master(nrOfWorkers: Int, start: Int, end: Int) extends Actor {
-		val startTime: Long = System.currentTimeMillis
-		val workerRouter = context.actorOf(Props[Worker].withRouter(RoundRobinPool(nrOfWorkers)), name = "workerRouter")
-
-		def receive = {
-			case Calculate ⇒
-				for (i ← 1 until nrOfWorkers)	{
-					val dur = (end - start) / nrOfWorkers
-					workerRouter ! Work(i, start, end, dur, nrOfWorkers)
-				}
-			case Result(value) ⇒
-				val duration = (System.currentTimeMillis - startTime).millis
-				// Stops this actor and all its supervised children
-				println("%s\t\t%s".format(value, MD5(value)))
-				println(duration)
-				context.stop(self)
-				context.system.shutdown()
+	/**
+	 * Get next n-th string
+	 * */
+	def getNext(key : String, n : Int) : String = {
+		val builder = new StringBuilder(key)
+		if (builder.isEmpty) {
+			builder.append(33.toChar)
+			return builder.toString()
 		}
-	}
 
-	def calculate(nrOfWorkers: Int, start: Int, end: Int) {
-		// Create an Akka system
-		val system = ActorSystem("BitcoinSystem")
+		val charSetSize = 126 - 33 + 1
+		val offSet = 33
+		var reminder = 0
+		var i = 0
+		var sum = (key(i) - offSet) + n
 
-		// create the master
-		val master = system.actorOf(Props(new Master(nrOfWorkers, start, end)),	name = "master")
+		builder.setCharAt(i, (sum % charSetSize + offSet).asInstanceOf[Char])
+		reminder = sum / charSetSize
+		i += 1
 
-		// start the calculation
-		master ! Calculate
+		while (i < builder.length && reminder > 0) {
+			sum = (key(i) - offSet) + reminder
+			builder.setCharAt(i, (sum % charSetSize + offSet).asInstanceOf[Char])
+			reminder = sum / charSetSize
+			i += 1
+		}
+
+		while (reminder > 0) {
+			builder.append((reminder % charSetSize + offSet).asInstanceOf[Char])
+			reminder /= charSetSize
+			i += 1
+		}
+
+		builder.toString()
 	}
 }
