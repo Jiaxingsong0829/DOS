@@ -4,7 +4,7 @@
 		module="dos$sources_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20150910210820"
+		publication="20150911201407"
 	/>
 	<configurations>
 		<conf name="default" visibility="public" description=""/>

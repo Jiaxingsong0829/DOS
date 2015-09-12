@@ -1,84 +1,218 @@
 import akka.actor.{Actor, ActorSystem, Props}
 import akka.routing.RoundRobinPool
+import com.typesafe.config.ConfigFactory
 
-import scala.concurrent.duration._
- 
+import scala.collection.mutable.ArrayBuffer
+
 object Project1 {
 
-  def main(args: Array[String]): Unit = {
+  	def main(args: Array[String]): Unit = {
+	  	var input = args(0)
+		input = "3"
+	  	input = "127.0.0.1"
 
-	  	val targetPrefixBuilder = new StringBuilder("000000")
-//	  	for (i <- 1 to args(0).toInt) {
-//			targetPrefixBuilder.append('0')
-//		}
-	  	calculate(nrOfWorkers = 8, targetPrefixBuilder.toString() : String)
+	  	// if it is a server
+	  	if (!input.contains(".")) {
+			val targetPrefixBuilder = new StringBuilder
+			for (i <- 1 to input.toInt) {
+				targetPrefixBuilder.append('0')
+			}
+			calculate(nrOfWorkers = 2, targetPrefixBuilder.toString() : String)
+		}
+		//else it is a client and could join the server
+	  	else {
+			serverIP = input
+			val system = ActorSystem("clientSystem", ConfigFactory.parseString("""
+    		akka {
+				 actor {
+					  provider = "akka.remote.RemoteActorRefProvider"
+						 }
+        	}"""))
 
-  }
+			// create the master for client
+			val clientMaster =
+				system.actorOf(Props(new ClientMaster(nrOfWorkers = 2)), name = "clientMaster")
+			clientMaster ! "connect"
+		}
+ 	}
 
-  sealed trait BitcoinMessage
-  case object Calculate extends BitcoinMessage
-  case class Work(startSuffix : String, workload : Int, targetPrefix : String) extends BitcoinMessage
-  case class Result(value: String) extends BitcoinMessage
+  	sealed trait BitcoinMessage
+  	case object Calculate extends BitcoinMessage
+	case class Work(startSuffix : String, workload : Int, targetPrefix : String) extends BitcoinMessage
+  	case class Result(value: String) extends BitcoinMessage
+	case class ClientResult(value : ArrayBuffer[String]) extends BitcoinMessage
 
 	// the special prefix
 	val prefix = "zhihuang"
-	class Worker extends Actor {
+	// by default
+	var serverIP = "127.0.0.1"
 
-		def search(startSuffix : String, workLoad : Int, targetPrefix : String): String = {
-			var suffix = startSuffix
-
-			for (1 <- 0 to workLoad) {
-				if (MD5(prefix + suffix).startsWith(targetPrefix)) {
-					return prefix + suffix
-				}
-				suffix = getNext(suffix, 1)
-			}
-			"FAILED"
-		}
-
+	class ServerWorker extends Actor {
 		def receive = {
 			case Work(startSuffix, workLoad, targetPrefix) ⇒
-			sender ! Result(search(startSuffix, workLoad, targetPrefix)) // perform the work
+				sender ! Result(serverSearch(startSuffix, workLoad, targetPrefix))
 		}
 	}
 
-	class Master(nrOfWorkers: Int, targetPrefix: String) extends Actor {
-		val workLoad = 10000
-		val startTime: Long = System.currentTimeMillis
-		val workerRouter = context.actorOf(Props[Worker].withRouter(RoundRobinPool(nrOfWorkers)), name = "workerRouter")
-		var startString = "";
+	class ClientWorker extends Actor {
+		def receive = {
+			case Work(startSuffix, workLoad, targetPrefix) ⇒
+				sender ! ClientResult(clientSearch(startSuffix, workLoad, targetPrefix))
+		}
+	}
+
+	class ServerMaster (nrOfWorkers: Int, targetPrefix: String) extends Actor {
+		// The work unit for a single actor
+		val workUnit = 1000
+		// The work unit for a single remote client
+		val workLoad = workUnit * 4
+		// Total mount of work
+		var remainingWorkLoad = BigInt(1000*1000*1000)
+
+		val workerRouter =
+			context.actorOf(Props[ServerWorker].withRouter(RoundRobinPool(nrOfWorkers)), name = "workerRouter")
+		var startSuffix = ""
+
+		def stopSystem() : Unit = {
+			context.stop(self);
+			context.system.shutdown();
+		}
 
 		def receive = {
 			case Calculate ⇒
-				for (i ← 1 until nrOfWorkers)	{
-					startString = getNext(startString, workLoad)
-					workerRouter ! Work(startString, workLoad, targetPrefix)
+				for (i ← 0 until nrOfWorkers)	{
+					workerRouter ! Work(startSuffix, workUnit, targetPrefix)
+					startSuffix = getNext(startSuffix, workUnit)
 				}
-			case Result(value) ⇒
-				val duration = (System.currentTimeMillis - startTime).millis
-				// Stops this actor and all its supervised children
-				if (value.equals("FAILED")) {
-					startString = getNext(startString, workLoad)
-					sender ! Work(startString, workLoad, targetPrefix);
+			// Get the result from server actor
+			case Result(value) =>
+				if (remainingWorkLoad > 0L) {
+					remainingWorkLoad -= workUnit
+					sender ! Work(startSuffix, workUnit, targetPrefix)
+					startSuffix = getNext(startSuffix, workUnit)
 				} else {
-					println("%s\t\t%s".format(value, MD5(value)))
-					println(duration)
-					context.stop(self)
-					context.system.shutdown()
+					stopSystem
 				}
+			// Get the result from client actors
+			case ClientResult(value) =>
+				for (string : String <- value) {
+					println(string + "\tremote client: "+sender.path)
+				}
+				if (remainingWorkLoad > 0) {
+					remainingWorkLoad -= workLoad
+					sender ! Work(startSuffix, workLoad, targetPrefix)
+					startSuffix = getNext(startSuffix, workLoad)
+				} else {
+					sender ! "STOP"
+					stopSystem
+				}
+			// The client join the group and notify the server
+			case "JOIN" =>
+				sender ! Work(startSuffix, workLoad, targetPrefix)
+				startSuffix = getNext(startSuffix, workLoad)
+		}
+	}
+
+	class ClientMaster (nrOfWorkers: Int) extends Actor{
+		val workUnit = 10000
+		val workerRouter =
+			context.actorOf(Props[ClientWorker].withRouter(RoundRobinPool(nrOfWorkers)), name ="workerRouter")
+		var serverMaster = context.actorSelection("akka.tcp://BitcoinSystem@%s:2209/user/master".format(serverIP))
+		var startSuffix = ""
+		var targetPrefix = ""
+		var remainingWorkLoad = 10000
+		var clientResult = new ArrayBuffer[String]()
+
+		def connectServer() : Unit = {
+			serverMaster ! "JOIN"
+		}
+
+		def stopSystem() : Unit = {
+			context.stop(self)
+			context.system.shutdown()
+		}
+
+		def receive = {
+			case "connect" =>
+				connectServer()
+			case Work(startSuffix, workLoad, targetPrefix) =>
+				clientResult = new ArrayBuffer[String]()
+				this.startSuffix = startSuffix
+				this.remainingWorkLoad = workLoad
+				this.targetPrefix = targetPrefix
+				for (i ← 0 until nrOfWorkers)	{
+					workerRouter ! Work(this.startSuffix, workUnit, this.targetPrefix)
+					remainingWorkLoad -= workUnit
+					this.startSuffix = getNext(this.startSuffix, workUnit)
+				}
+			case ClientResult(value) =>
+				clientResult ++= value
+				if (remainingWorkLoad > 0) {
+					sender !  Work(startSuffix, workUnit, targetPrefix)
+					remainingWorkLoad -= workUnit
+					startSuffix = getNext(startSuffix, workUnit)
+				} else {
+					serverMaster ! new ClientResult(clientResult)
+				}
+			case "STOP" =>
+				stopSystem
 		}
 	}
 
 	def calculate(nrOfWorkers: Int, targetPrefix : String) {
-		// Create an Akka system
-		val system = ActorSystem("BitcoinSystem")
+		// start remoting configuration
+		val system = ActorSystem("BitcoinSystem", ConfigFactory.parseString("""
+    		akka {
+				 actor {
+					  provider = "akka.remote.RemoteActorRefProvider"
+						 }
+				 remote {
+					  transport = ["akka.remote.netty.tcp"]
+				 netty.tcp {
+					  hostname = "127.0.0.1"
+					  port = 2209
+							  }
+					 }
+        	}"""))
 
 		// create the master
 		val master =
-			system.actorOf(Props(new Master(nrOfWorkers, targetPrefix)), name = "master")
+			system.actorOf(Props(new ServerMaster(nrOfWorkers, targetPrefix)), name = "master")
 
 		// start the calculation
 		master ! Calculate
+	}
+
+	/**
+	 * The server directly print out the result and notify the master when finish.
+	 * */
+	def serverSearch(startSuffix : String, workLoad : Int, targetPrefix : String): String = {
+		var suffix = startSuffix
+		for (i <- 0 to workLoad) {
+			val hashValue = MD5(prefix + suffix)
+			if (hashValue.startsWith(targetPrefix)) {
+				println(prefix + suffix + "\t\t" + hashValue)
+			}
+			suffix = getNext(suffix, 1)
+		}
+		"DONE"
+	}
+
+	/**
+	 * The client result a collection of results to minize the cost on communication.
+	 * */
+	def clientSearch(startSuffix : String, workLoad : Int, targetPrefix : String):
+	ArrayBuffer[String] = {
+		var suffix = startSuffix
+		var result = new ArrayBuffer[String]()
+		for (i <- 0 to workLoad) {
+			val hashValue = MD5(prefix + suffix)
+			if (hashValue.startsWith(targetPrefix)) {
+				result += (prefix + suffix+"\t\t"+hashValue)
+			}
+			suffix = getNext(suffix, 1)
+		}
+		result
 	}
 
 	def MD5(s: String): String = {
@@ -89,12 +223,10 @@ object Project1 {
 	/**
 	 * Get next n-th string
 	 * */
-	def getNext(key : String, n : Int) : String = {
+	def getNext(k : String, n : Int) : String = {
+		var key = k
+		if (key == null || key.isEmpty) { key = "!"}
 		val builder = new StringBuilder(key)
-		if (builder.isEmpty) {
-			builder.append(33.toChar)
-			return builder.toString()
-		}
 
 		val charSetSize = 126 - 33 + 1
 		val offSet = 33
@@ -105,20 +237,17 @@ object Project1 {
 		builder.setCharAt(i, (sum % charSetSize + offSet).asInstanceOf[Char])
 		reminder = sum / charSetSize
 		i += 1
-
 		while (i < builder.length && reminder > 0) {
 			sum = (key(i) - offSet) + reminder
 			builder.setCharAt(i, (sum % charSetSize + offSet).asInstanceOf[Char])
 			reminder = sum / charSetSize
 			i += 1
 		}
-
 		while (reminder > 0) {
 			builder.append((reminder % charSetSize + offSet).asInstanceOf[Char])
 			reminder /= charSetSize
 			i += 1
 		}
-
 		builder.toString()
 	}
 }

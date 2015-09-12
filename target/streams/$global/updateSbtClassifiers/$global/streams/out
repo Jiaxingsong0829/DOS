@@ -703,9 +703,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.8!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
-[debug] :: resolution report :: resolve 1249ms :: artifacts dl 56ms
+[debug] :: resolution report :: resolve 7545ms :: artifacts dl 458ms
 [debug] 	report for default#dos$sbt_2.11;1.0 default produced in F:\Files\ScalaProject\DOS\target\resolution-cache\reports\default-dos$sbt_2.11-default.xml
-[debug] 	resolve done (1249ms resolve - 56ms download)
+[debug] 	resolve done (7545ms resolve - 458ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#dos$sources_2.11;1.0
 [debug] 	confs: [default]
@@ -1069,6 +1069,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_8_2;0.13.8!precompiled-2_8_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_2;0.13.8!precompiled-2_9_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.8!precompiled-2_9_3.jar(src)
-[debug] :: resolution report :: resolve 435ms :: artifacts dl 112ms
+[debug] :: resolution report :: resolve 1221ms :: artifacts dl 267ms
 [debug] 	report for default#dos$sources_2.11;1.0 default produced in F:\Files\ScalaProject\DOS\target\resolution-cache\reports\default-dos$sources_2.11-default.xml
-[debug] 	resolve done (435ms resolve - 112ms download)
+[debug] 	resolve done (1221ms resolve - 267ms download)
