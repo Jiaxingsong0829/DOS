@@ -15,23 +15,34 @@ object Calculator {
    var count2 = 0
    var count1 = 0
 
+   var long = ""
+
    def count(string : String): Unit = {
       counter += 1;
       val hashValue = string.split("\t\t")(1)
 
-      if (hashValue.startsWith("0000000000")) {count10 += 1}
-      if (hashValue.startsWith("000000000")) {count9 += 1}
-      if (hashValue.startsWith("00000000")) {count8 += 1}
-      if (hashValue.startsWith("0000000")) {count7 += 1}
-      if (hashValue.startsWith("000000")) {count6 += 1}
-      if (hashValue.startsWith("00000")) {count5 += 1}
-      if (hashValue.startsWith("0000")) {count4 += 1}
-      if (hashValue.startsWith("000")) {count3 += 1}
-      if (hashValue.startsWith("00")) {count2 += 1}
-      if (hashValue.startsWith("0")) {count1 += 1}
+      if (hashValue.startsWith("0000000000")) {count10 += 1
+         long += string+","
+      }
+      else if (hashValue.startsWith("000000000")) {count9 += 1
+         long += string+","
+      }
+      else if (hashValue.startsWith("00000000")) {count8 += 1
+         long += string+","
+      }
+      else if (hashValue.startsWith("0000000")) {count7 += 1
+         long += string+","
+      }
+      else if (hashValue.startsWith("000000")) {count6 += 1}
+      else if (hashValue.startsWith("00000")) {count5 += 1}
+      else if (hashValue.startsWith("0000")) {count4 += 1}
+      else if (hashValue.startsWith("000")) {count3 += 1}
+      else if (hashValue.startsWith("00")) {count2 += 1}
+      else if (hashValue.startsWith("0")) {count1 += 1}
 
 
-      println()
+      if (long.length > 0)
+         println(long)
       print(count10+" ")
       print(count9+" ")
       print(count8+" ")
@@ -42,6 +53,5 @@ object Calculator {
       print(count3+" ")
       print(count2+" ")
       println(count1)
-
    }
 }

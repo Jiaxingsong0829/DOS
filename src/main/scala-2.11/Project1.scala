@@ -9,12 +9,7 @@ import scala.collection.mutable.ArrayBuffer
 object Project1 {
 
   	def main(args: Array[String]): Unit = {
-	  	var input = args(0)
-//		input = "4"
-//	  	input = "192.168.2.10"
-
-      input = "1"
-      input = "192.168.93.1"
+	  	val input = args(0)
 
 	  	// if it is a server
 	  	if (!input.contains(".")) {
@@ -22,7 +17,7 @@ object Project1 {
 			for (i <- 1 to input.toInt) {
 				targetPrefixBuilder.append('0')
 			}
-			calculate(nrOfWorkers = 2, targetPrefixBuilder.toString() : String)
+			calculate(nrOfWorkers = 4, targetPrefixBuilder.toString() : String)
 		}
 		//else it is a client and could join the server
 	  	else {
@@ -72,7 +67,7 @@ object Project1 {
 		// The work unit for a single remote client
 		val workLoad = workUnit * 32
 		// Total mount of work
-		var remainingWorkLoad = BigInt(10000*10000)
+		var remainingWorkLoad = BigInt(1000*1000*1000)
 
 		val workerRouter =
 			context.actorOf(Props[ServerWorker].withRouter(RoundRobinPool(nrOfWorkers)), name = "workerRouter")
@@ -102,7 +97,6 @@ object Project1 {
 			case ClientResult(value) =>
 				for (string : String <- value) {
 					println(string + "\tremote client: "+sender.path)
-               Calculator.count(string)
 				}
 				if (remainingWorkLoad > 0) {
 					remainingWorkLoad -= workLoad
@@ -199,7 +193,6 @@ object Project1 {
 			val hashValue = MD5(prefix + suffix)
 			if (hashValue.startsWith(targetPrefix)) {
 				println(prefix + suffix + "\t\t" + hashValue)
-            Calculator.count(prefix + suffix + "\t\t" + hashValue);
 			}
 			suffix = getNext(suffix, 1)
 		}
@@ -217,7 +210,6 @@ object Project1 {
 			val hashValue = MD5(prefix + suffix)
 			if (hashValue.startsWith(targetPrefix)) {
 				result += (prefix + suffix+"\t\t"+hashValue)
-            println((prefix + suffix+"\t\t"+hashValue))
 			}
 			suffix = getNext(suffix, 1)
 		}
