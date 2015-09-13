@@ -1,3 +1,5 @@
+import java.net.InetAddress
+
 import akka.actor.{Actor, ActorSystem, Props}
 import akka.routing.RoundRobinPool
 import com.typesafe.config.ConfigFactory
@@ -8,8 +10,11 @@ object Project1 {
 
   	def main(args: Array[String]): Unit = {
 	  	var input = args(0)
-		input = "3"
-	  	input = "127.0.0.1"
+//		input = "4"
+//	  	input = "192.168.2.10"
+
+      input = "1"
+      input = "192.168.93.1"
 
 	  	// if it is a server
 	  	if (!input.contains(".")) {
@@ -63,19 +68,19 @@ object Project1 {
 
 	class ServerMaster (nrOfWorkers: Int, targetPrefix: String) extends Actor {
 		// The work unit for a single actor
-		val workUnit = 1000
+		val workUnit = 10000
 		// The work unit for a single remote client
-		val workLoad = workUnit * 4
+		val workLoad = workUnit * 32
 		// Total mount of work
-		var remainingWorkLoad = BigInt(1000*1000*1000)
+		var remainingWorkLoad = BigInt(10000*10000)
 
 		val workerRouter =
 			context.actorOf(Props[ServerWorker].withRouter(RoundRobinPool(nrOfWorkers)), name = "workerRouter")
 		var startSuffix = ""
 
 		def stopSystem() : Unit = {
-			context.stop(self);
-			context.system.shutdown();
+			context.stop(self)
+			context.system.shutdown()
 		}
 
 		def receive = {
@@ -97,6 +102,7 @@ object Project1 {
 			case ClientResult(value) =>
 				for (string : String <- value) {
 					println(string + "\tremote client: "+sender.path)
+               Calculator.count(string)
 				}
 				if (remainingWorkLoad > 0) {
 					remainingWorkLoad -= workLoad
@@ -117,7 +123,7 @@ object Project1 {
 		val workUnit = 10000
 		val workerRouter =
 			context.actorOf(Props[ClientWorker].withRouter(RoundRobinPool(nrOfWorkers)), name ="workerRouter")
-		var serverMaster = context.actorSelection("akka.tcp://BitcoinSystem@%s:2209/user/master".format(serverIP))
+		var serverMaster = context.actorSelection("akka.tcp://BitcoinSystem@%s:9999/user/master".format(serverIP))
 		var startSuffix = ""
 		var targetPrefix = ""
 		var remainingWorkLoad = 10000
@@ -135,22 +141,22 @@ object Project1 {
 		def receive = {
 			case "connect" =>
 				connectServer()
-			case Work(startSuffix, workLoad, targetPrefix) =>
+			case Work(start, workLoad, prefix) =>
 				clientResult = new ArrayBuffer[String]()
-				this.startSuffix = startSuffix
-				this.remainingWorkLoad = workLoad
-				this.targetPrefix = targetPrefix
+				startSuffix = start
+				remainingWorkLoad = workLoad
+				targetPrefix = prefix
 				for (i ← 0 until nrOfWorkers)	{
-					workerRouter ! Work(this.startSuffix, workUnit, this.targetPrefix)
+					workerRouter ! Work(startSuffix, workUnit, targetPrefix)
 					remainingWorkLoad -= workUnit
-					this.startSuffix = getNext(this.startSuffix, workUnit)
+					startSuffix = getNext(startSuffix, workUnit)
 				}
 			case ClientResult(value) =>
 				clientResult ++= value
 				if (remainingWorkLoad > 0) {
 					sender !  Work(startSuffix, workUnit, targetPrefix)
 					remainingWorkLoad -= workUnit
-					startSuffix = getNext(startSuffix, workUnit)
+               startSuffix = getNext(startSuffix, workUnit)
 				} else {
 					serverMaster ! new ClientResult(clientResult)
 				}
@@ -161,19 +167,20 @@ object Project1 {
 
 	def calculate(nrOfWorkers: Int, targetPrefix : String) {
 		// start remoting configuration
+		val localIpAddress = InetAddress.getLocalHost().getHostAddress()
 		val system = ActorSystem("BitcoinSystem", ConfigFactory.parseString("""
     		akka {
 				 actor {
 					  provider = "akka.remote.RemoteActorRefProvider"
-						 }
+             }
 				 remote {
 					  transport = ["akka.remote.netty.tcp"]
 				 netty.tcp {
-					  hostname = "127.0.0.1"
-					  port = 2209
-							  }
-					 }
-        	}"""))
+					  hostname = "%s"
+					  port = 9999
+             }
+            }
+        	}""".format(localIpAddress)))
 
 		// create the master
 		val master =
@@ -188,10 +195,11 @@ object Project1 {
 	 * */
 	def serverSearch(startSuffix : String, workLoad : Int, targetPrefix : String): String = {
 		var suffix = startSuffix
-		for (i <- 0 to workLoad) {
+		for (i <- 0 until workLoad) {
 			val hashValue = MD5(prefix + suffix)
 			if (hashValue.startsWith(targetPrefix)) {
 				println(prefix + suffix + "\t\t" + hashValue)
+            Calculator.count(prefix + suffix + "\t\t" + hashValue);
 			}
 			suffix = getNext(suffix, 1)
 		}
@@ -205,10 +213,11 @@ object Project1 {
 	ArrayBuffer[String] = {
 		var suffix = startSuffix
 		var result = new ArrayBuffer[String]()
-		for (i <- 0 to workLoad) {
+		for (i <- 0 until workLoad) {
 			val hashValue = MD5(prefix + suffix)
 			if (hashValue.startsWith(targetPrefix)) {
 				result += (prefix + suffix+"\t\t"+hashValue)
+            println((prefix + suffix+"\t\t"+hashValue))
 			}
 			suffix = getNext(suffix, 1)
 		}
@@ -250,4 +259,5 @@ object Project1 {
 		}
 		builder.toString()
 	}
+
 }

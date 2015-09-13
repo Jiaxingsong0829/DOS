@@ -1,0 +1,336 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes
+compile options:
+0 items
+javac options:
+0 items
+compiler version:
+1 items
+0 -> 2.11.7
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> true
+products:
+28 items
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$$anonfun$1.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$$anonfun$2.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$$anonfun$MD5$1.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$$anonfun$clientSearch$1.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$$anonfun$main$1.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$$anonfun$serverSearch$1.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$BitcoinMessage.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$Calculate$.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientMaster$$anonfun$receive$4$$anonfun$applyOrElse$2.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientMaster$$anonfun$receive$4.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientMaster.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientResult$.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientResult.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientWorker$$anonfun$receive$2.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientWorker.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$Result$.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$Result.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerMaster$$anonfun$receive$3$$anonfun$applyOrElse$1.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerMaster$$anonfun$receive$3$$anonfun$applyOrElse$3.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerMaster$$anonfun$receive$3$$anonfun$applyOrElse$4.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerMaster$$anonfun$receive$3.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerMaster.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerWorker$$anonfun$receive$1.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerWorker.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$Work$.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$Work.class
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1.class
+binary dependencies:
+4 items
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> C:\Users\win8\.ivy2\cache\com.typesafe.akka\akka-actor_2.11\jars\akka-actor_2.11-2.3.13.jar
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> C:\Users\win8\.ivy2\cache\com.typesafe\config\bundles\config-1.2.1.jar
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> C:\Users\win8\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.11.7.jar
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> D:\Java\jdk1.8.0_05\jre\lib\rt.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+28 items
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$$anonfun$1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$$anonfun$2
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$$anonfun$MD5$1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$$anonfun$clientSearch$1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$$anonfun$main$1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$$anonfun$serverSearch$1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$BitcoinMessage
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$Calculate$
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ClientMaster
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ClientMaster$$anonfun$receive$4
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ClientMaster$$anonfun$receive$4$$anonfun$applyOrElse$2
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ClientResult
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ClientResult$
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ClientWorker
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ClientWorker$$anonfun$receive$2
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$Result
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$Result$
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ServerMaster
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ServerMaster$$anonfun$receive$3
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ServerMaster$$anonfun$receive$3$$anonfun$applyOrElse$1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ServerMaster$$anonfun$receive$3$$anonfun$applyOrElse$3
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ServerMaster$$anonfun$receive$3$$anonfun$applyOrElse$4
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ServerWorker
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$ServerWorker$$anonfun$receive$1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$Work
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1$Work$
+used names:
+172 items
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> !
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> %
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> &&
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> *
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> +
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ++=
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> +=
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> -
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> /
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> <
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> <init>
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ==
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> >
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> A1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> AbstractFunction1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> AbstractFunction3
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Actor
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ActorSelection
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ActorSystem
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> AnyRef
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Array
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ArrayBuffer
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> B1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> BigInt
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> BitcoinMessage
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Calculate
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Char
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ClassTag
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ClientMaster
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ClientResult
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ClientWorker
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ConfigFactory
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Function1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Int
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> MD5
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> MessageDigest
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> None
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Predef
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Product
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Project1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Props
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Result
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> RoundRobinPool
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ScalaRunTime
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Serializable
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ServerMaster
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ServerWorker
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Statics
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> String
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> StringBuilder
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Unit
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> Work
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> _hashCode
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> _toString
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> actor
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> actorOf
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> actorRef2Scala
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> actorSelection
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> akka
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> anyHash
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> append
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> apply
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> args
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> asInstanceOf
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> augmentString
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> builder
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> byteArrayOps
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> calculate
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> canBuildFrom
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> charSetSize
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> clientMaster
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> clientResult
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> clientResult_=
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> clientSearch
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> collection
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> com
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> config
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> connectServer
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> contains
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> context
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> digest
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> eq
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> finalizeHash
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> foreach
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> format
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> getBytes
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> getInstance
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> getNext
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> hashValue
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> i
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> input
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> int2bigInt
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> intWrapper
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> isEmpty
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> isInstanceOf
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> java
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> k
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> key
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> length
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> long2bigInt
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> m
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> map
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> master
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> materializeClassTag
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> math
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> mix
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> mkString
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> mutable
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> n
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ne
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> nrOfWorkers
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> offSet
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> package
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> parseString
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> path
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> prefix
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> println
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> qual$1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> qual$2
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> refArrayOps
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> remainingWorkLoad
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> remainingWorkLoad_=
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> reminder
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> result
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> routing
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> runtime
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> s
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> scala
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> security
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> self
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> sender
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> serverIP
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> serverIP_=
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> serverMaster
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> serverSearch
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> setCharAt
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> shutdown
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> startSuffix
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> startSuffix_=
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> startsWith
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> stop
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> stopSystem
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> string
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> suffix
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> sum
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> system
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> targetPrefix
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> targetPrefixBuilder
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> targetPrefix_=
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> to
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> toInt
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> toScala
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> toString
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> typedProductIterator
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> typesafe
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> unary_!
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> unchecked
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> until
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> value
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> while$1
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> while$2
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> withFilter
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> withRouter
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> workLoad
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> workUnit
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> workerRouter
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> workload
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> x$2
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> x$3
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> x$4
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> x$5
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> ||
+product stamps:
+28 items
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$$anonfun$1.class -> lastModified(1442089036428)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$$anonfun$2.class -> lastModified(1442089036434)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$$anonfun$clientSearch$1.class -> lastModified(1442089036452)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$$anonfun$main$1.class -> lastModified(1442089036458)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$$anonfun$MD5$1.class -> lastModified(1442089036440)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$$anonfun$serverSearch$1.class -> lastModified(1442089036465)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$.class -> lastModified(1442089036387)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$BitcoinMessage.class -> lastModified(1442089036469)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$Calculate$.class -> lastModified(1442089036479)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientMaster$$anonfun$receive$4$$anonfun$applyOrElse$2.class -> lastModified(1442089036561)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientMaster$$anonfun$receive$4.class -> lastModified(1442089036532)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientMaster.class -> lastModified(1442089036512)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientResult$.class -> lastModified(1442089036587)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientResult.class -> lastModified(1442089036578)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientWorker$$anonfun$receive$2.class -> lastModified(1442089036608)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ClientWorker.class -> lastModified(1442089036600)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$Result$.class -> lastModified(1442089036616)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$Result.class -> lastModified(1442089036626)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerMaster$$anonfun$receive$3$$anonfun$applyOrElse$1.class -> lastModified(1442089036673)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerMaster$$anonfun$receive$3$$anonfun$applyOrElse$3.class -> lastModified(1442089036679)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerMaster$$anonfun$receive$3$$anonfun$applyOrElse$4.class -> lastModified(1442089036692)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerMaster$$anonfun$receive$3.class -> lastModified(1442089036667)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerMaster.class -> lastModified(1442089036645)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerWorker$$anonfun$receive$1.class -> lastModified(1442089036728)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$ServerWorker.class -> lastModified(1442089036713)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$Work$.class -> lastModified(1442089036751)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1$Work.class -> lastModified(1442089036741)
+F:\Files\ScalaProject\DOS\target\scala-2.11\classes\Project1.class -> lastModified(1442089036235)
+source stamps:
+1 items
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> hash(7f9bb0dfe6d233187376983e393b58fd1d1a5adb)
+binary stamps:
+4 items
+C:\Users\win8\.ivy2\cache\com.typesafe.akka\akka-actor_2.11\jars\akka-actor_2.11-2.3.13.jar -> lastModified(1441280160000)
+C:\Users\win8\.ivy2\cache\com.typesafe\config\bundles\config-1.2.1.jar -> lastModified(1399042454000)
+C:\Users\win8\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.11.7.jar -> lastModified(1435004218000)
+D:\Java\jdk1.8.0_05\jre\lib\rt.jar -> lastModified(1402976397042)
+class names:
+4 items
+C:\Users\win8\.ivy2\cache\com.typesafe.akka\akka-actor_2.11\jars\akka-actor_2.11-2.3.13.jar -> akka.actor.Actor
+C:\Users\win8\.ivy2\cache\com.typesafe\config\bundles\config-1.2.1.jar -> com.typesafe.config.ConfigFactory
+C:\Users\win8\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.11.7.jar -> scala.Serializable
+D:\Java\jdk1.8.0_05\jre\lib\rt.jar -> java.lang.Object
+internal apis:
+1 items
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHDzzeV0AHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAACc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwSi844XQABHNlbGZzcQB+AAu9JR6qdAAHY29udGV4dHVxAH4ACQAAAFBzcQB+AAuBLA2IdAAGbm90aWZ5c3EAfgALd3mxOHQAB3VuYXBwbHlzcQB+AAuW9/0OdAAHY3VycmllZHNxAH4AC/JmDZh0AAdSZWNlaXZlc3EAfgALYs/vd3QAB2dldE5leHRzcQB+AAv6dd8JdAAEd2FpdHNxAH4AC1HjLK50AAh3b3JrbG9hZHNxAH4AC28U+Ht0AA5jb3B5JGRlZmF1bHQkMnNxAH4AC2kytFp0AA0kYXNJbnN0YW5jZU9mc3EAfgALpUlqT3QACnN0b3BTeXN0ZW1zcQB+AAuhMeUKdAAHY29tcG9zZXNxAH4AC/osaKF0AAxwcm9kdWN0QXJpdHlzcQB+AAszbN11dAAGZXF1YWxzc3EAfgALRRG1hHQABnByZWZpeHNxAH4AC+sbEkt0ABFyZW1haW5pbmdXb3JrTG9hZHNxAH4ACxbbJmR0AAxhc0luc3RhbmNlT2ZzcQB+AAvB4vwMdAAMdGFyZ2V0UHJlZml4c3EAfgALVuNWp3QADFNlcnZlcldvcmtlcnNxAH4AC78DYhl0AAxzeW5jaHJvbml6ZWRzcQB+AAvvaGn2dAAOQml0Y29pbk1lc3NhZ2VzcQB+AAuEYD7SdAANJGlzSW5zdGFuY2VPZnNxAH4AC0fWqzt0AAdhbmRUaGVuc3EAfgALlprSvXQAB3JlY2VpdmVzcQB+AAt0nP7SdAAKcHJlUmVzdGFydHNxAH4ACx4dASF0AAZ0dXBsZWRzcQB+AAv6uwexdAAIUHJvamVjdDFzcQB+AAtn9/RHdAANYXJvdW5kUmVjZWl2ZXNxAH4ACxep3PF0AAhjYW5FcXVhbHNxAH4AC02Vswp0AAtwb3N0UmVzdGFydHNxAH4AC9uFphd0AARtYWluc3EAfgALCqMpw3QACHBvc3RTdG9wc3EAfgALbDb8JXQADXByb2R1Y3RQcmVmaXhzcQB+AAuHVGBmdAALc3RhcnRTdWZmaXhzcQB+AAs8EunodAAJbm90aWZ5QWxsc3EAfgALaKfUZ3QAC3JlYWRSZXNvbHZlc3EAfgALKfnqYHQAEWFyb3VuZFBvc3RSZXN0YXJ0c3EAfgAL+5xe9XQADGlzSW5zdGFuY2VPZnNxAH4ACwR3pS90ABBhcm91bmRQcmVSZXN0YXJ0c3EAfgALhlw6BnQADmFyb3VuZFBvc3RTdG9wc3EAfgALTi/OlHQABFdvcmtzcQB+AAscXPVYdAAGPGluaXQ+c3EAfgALEdPT2HQACHdvcmtVbml0c3EAfgALEZWDm3QACHByZVN0YXJ0c3EAfgALNW3joXQACXVuaGFuZGxlZHNxAH4AC+DQ0S50AAljYWxjdWxhdGVzcQB+AAujitEOdAAFYXBwbHlzcQB+AAsNsCK+dAAMY2xpZW50UmVzdWx0c3EAfgALEOoizHQADGNsaWVudFNlYXJjaHNxAH4ACxw89gB0AANNRDVzcQB+AAuIfix6dAACPT1zcQB+AAvewqhPdAAFY2xvbmVzcQB+AAvL3Jk3dAAMc2VydmVyU2VhcmNoc3EAfgAL3659AHQADWNvbm5lY3RTZXJ2ZXJzcQB+AAt2cMS+dAAJQ2FsY3VsYXRlc3EAfgAL4dxC73QACHdvcmtMb2Fkc3EAfgALh0KSMnQADmNvcHkkZGVmYXVsdCQzc3EAfgALu5TYlXQABGNvcHlzcQB+AAuWan6bdAAGc2VuZGVyc3EAfgALFY+cy3QACHRvU3RyaW5nc3EAfgAL47xdt3QADHdvcmtlclJvdXRlcnNxAH4AC00t3HZ0AAIhPXNxAH4AC4UYuxd0AAhnZXRDbGFzc3NxAH4AC7SIhsN0AAxTZXJ2ZXJNYXN0ZXJzcQB+AAsDss8HdAAOY29weSRkZWZhdWx0JDFzcQB+AAuJG/ttdAAGUmVzdWx0c3EAfgALv8syjnQADENsaWVudFJlc3VsdHNxAH4AC+HgtYB0AAJuZXNxAH4AC2EAK610AAxzZXJ2ZXJNYXN0ZXJzcQB+AAteoFJOdAAMQ2xpZW50V29ya2Vyc3EAfgALlkF2qHQABXZhbHVlc3EAfgAL4jei8nQAEnN1cGVydmlzb3JTdHJhdGVneXNxAH4ACxFOvg50AAJlcXNxAH4ACzNYXA90AA9wcm9kdWN0SXRlcmF0b3JzcQB+AAvoOI+TdAAIc2VydmVySVBzcQB+AAvpAPYBdAACIyNzcQB+AAvZtz3edAAIZmluYWxpemVzcQB+AAtR3SgddAAOcHJvZHVjdEVsZW1lbnRzcQB+AAvj+ShmdAAIaGFzaENvZGVzcQB+AAurTRcjdAAOYXJvdW5kUHJlU3RhcnRzcQB+AAtOCr9tdAAMQ2xpZW50TWFzdGVyc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAXNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4Au3hyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AAx4cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzxxETIWmc3CQCAAFCAAVmbGFnc3hwAHEAfgBFdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAXNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBwc3EAfgDSAXNyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgC7TAAJaW5oZXJpdGVkcQB+ALtMAAdwYXJlbnRzcQB+ALt4cQB+ANlzcQB+ANIBdXEAfgC2AAAAAXNyAA14c2J0aS5hcGkuRGVmUr6f4ny0NmkCAAJMAApyZXR1cm5UeXBldAAQTHhzYnRpL2FwaS9UeXBlO1sAD3ZhbHVlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1BhcmFtZXRlckxpc3Q7eHEAfgC8cQB+AMV1cQB+AMYAAAAAc3EAfgDIAHEAfgBNdXEAfgDKAAAAAHNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADEwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+ANh0AARVbml0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgDYc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAACc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADHhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgD0dXIAGltMeHNidGkuYXBpLlBhcmFtZXRlckxpc3Q79dM6HfKzcO4CAAB4cAAAAAFzcgAXeHNidGkuYXBpLlBhcmFtZXRlckxpc3TWxbwcZEl04wIAAloACmlzSW1wbGljaXRbAApwYXJhbWV0ZXJzdAAcW0x4c2J0aS9hcGkvTWV0aG9kUGFyYW1ldGVyO3hwAHVyABxbTHhzYnRpLmFwaS5NZXRob2RQYXJhbWV0ZXI7z7jFXaXdtW0CAAB4cAAAAAFzcgAZeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlch9FrhfTSbDqAgAEWgAKaGFzRGVmYXVsdEwACG1vZGlmaWVydAAdTHhzYnRpL2FwaS9QYXJhbWV0ZXJNb2RpZmllcjtMAARuYW1lcQB+AAxMAAN0cGVxAH4A4XhwAH5yABt4c2J0aS5hcGkuUGFyYW1ldGVyTW9kaWZpZXIAAAAAAAAAABIAAHhxAH4AzXQABVBsYWludAAEYXJnc3NyABd4c2J0aS5hcGkuUGFyYW1ldGVyaXplZBZs7mkDybt/AgACTAAIYmFzZVR5cGVxAH4A6FsADXR5cGVBcmd1bWVudHN0ABFbTHhzYnRpL2FwaS9UeXBlO3hxAH4A2HNxAH4A53QABUFycmF5cQB+AO11cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAXNxAH4A53QABlN0cmluZ3NxAH4A63NxAH4A7nVxAH4A8QAAAANzcQB+APN0AARqYXZhc3EAfgDzdAAEbGFuZ3EAfgD4cHNxAH4A0gF1cQB+ALYAAAAAcHNxAH4A0gF1cQB+AQwAAAACc3EAfgDndAAGT2JqZWN0cQB+ARBzcQB+AOd0AANBbnlxAH4A7XBwdXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAABzcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAU/DNDdfdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgAMTAAPc291cmNlRGlyZWN0b3J5cQB+AAx4cHQAM0Y6XEZpbGVzXFNjYWxhUHJvamVjdFxET1NcdGFyZ2V0XHNjYWxhLTIuMTFcY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFH+bsN/m0jMYc3aYPjk7WP0dGlrb
+external apis:
+0 items
+source infos:
+1 items
+F:\Files\ScalaProject\DOS\src\main\scala-2.11\Project1.scala -> 
+AAAAAAAAAAA=
+compilations:
+3 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABT8MqpY51cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAM0Y6XEZpbGVzXFNjYWxhUHJvamVjdFxET1NcdGFyZ2V0XHNjYWxhLTIuMTFcY2xhc3Nlc3QAAS8=
+1 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABT8MusTh1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAM0Y6XEZpbGVzXFNjYWxhUHJvamVjdFxET1NcdGFyZ2V0XHNjYWxhLTIuMTFcY2xhc3Nlc3QAAS8=
+2 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABT8M0N191cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAM0Y6XEZpbGVzXFNjYWxhUHJvamVjdFxET1NcdGFyZ2V0XHNjYWxhLTIuMTFcY2xhc3Nlc3QAAS8=
